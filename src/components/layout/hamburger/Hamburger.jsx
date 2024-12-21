@@ -1,18 +1,39 @@
-import { useState } from 'react'
-import { FiAlignRight } from "react-icons/fi"
-import { RxCross1 } from "react-icons/rx"
+import { useEffect, useRef, useState } from 'react'
+import { FiAlignRight } from 'react-icons/fi'
+import { RxCross1 } from 'react-icons/rx'
 import Menu from '../hamburger/Menu'
 import styles from './Hamburger.module.scss'
 
 function Hamburger() {
-	const [isShow, setIsShow] = useState(false)
+	const ref = useRef(null)
+  const [isShow, setIsShow] = useState(false)
+	const closeMenuOutside = (e) => {
+		if(ref.current && !ref.current.contains(e.target) || e.key === "Escape"){
+    	setIsShow(false)
+		}
+	}
 
-	return <div className={styles.wrapper}>
-		<button onClick={() => {setIsShow(!isShow)}}>
-		{isShow ? <RxCross1 color="white"/> : <FiAlignRight color="white" />}
-		</button>
-		<Menu isShow={isShow}/>
-	</div>
+	useEffect(() => {
+		document.addEventListener('click', closeMenuOutside, true)
+		document.addEventListener('keydown', closeMenuOutside, true)
+		return() => {
+			document.removeEventListener('click', closeMenuOutside, true)
+			document.removeEventListener('keydown', closeMenuOutside, true)
+		}
+	})
+
+	return (
+		<div className={styles.wrapper} ref={ref} onClick={closeMenuOutside}>
+			<button
+				onClick={() => {
+					setIsShow(!isShow)
+				}}
+			>
+				{isShow ? <RxCross1 color='white' /> : <FiAlignRight color='white' />}
+			</button>
+			<Menu isShow={isShow} />
+		</div>
+	)
 }
 
 export default Hamburger
