@@ -1,6 +1,6 @@
 import Header from './header/Header'
 
-function Layout({ children, backLink = '/' }) {
+function Layout({ children, bgImage, heading="" ,backLink = '/' }) {
 	return (
 		<div>
 			<Header backLink={backLink} />
