@@ -16,7 +16,7 @@ function Header({ backLink }) {
 					setAu(!isAu)
 				}}
 			>
-				{!isAu ? <TbCat /> : <GoArrowLeft />}
+				{!isAu ? <TbCat color = 'fff' fontSize={29} /> : <GoArrowLeft color='fff' fontSize={29} />}
 			</button>
 			<Hamburger />
 		</header>

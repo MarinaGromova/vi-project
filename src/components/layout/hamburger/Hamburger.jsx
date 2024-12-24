@@ -29,7 +29,7 @@ function Hamburger() {
 					setIsShow(!isShow)
 				}}
 			>
-				{isShow ? <RxCross1 color='white' /> : <FiAlignRight color='white' />}
+				{isShow ? <RxCross1 color='fff' /> : <FiAlignRight color='fff' />}
 			</button>
 			<Menu isShow={isShow} />
 		</div>
