@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import useAuth from '../hooks/useAuth.js'
 
-import NotFound from '../not-found/NotFound'
+import NotFound from '../components/screens/not-found/NotFound.jsx'
 
 import { routes } from './routes.data'
 

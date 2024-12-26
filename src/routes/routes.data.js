@@ -1,7 +1,7 @@
-import App from '../App'
-import Auth from '../auth/Auth'
-import NewWorkout from '../new-workout/NewWorkout'
-import Profile from '../profile/Profile'
+import App from '../components/screens/app/App'
+import Auth from '../components/screens/auth/Auth'
+import NewWorkout from '../components/screens/new-workout/NewWorkout'
+import Profile from '../components/screens/profile/Profile'
 
 export const routes = [
 	{
@@ -22,6 +22,6 @@ export const routes = [
 	{
 		path: '/profile',
 		component: Profile,
-		isAuth: true
+		isAuth: false
 	}
 ]
