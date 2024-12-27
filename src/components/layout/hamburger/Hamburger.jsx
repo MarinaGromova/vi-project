@@ -29,7 +29,7 @@ function Hamburger() {
 					setIsShow(!isShow)
 				}}
 			>
-				{isShow ? <IoClose color='fff' /> : <FiAlignRight color='fff' />}
+				{isShow ? <IoClose fontSize={50} color='fff' /> : <FiAlignRight fontSize={50} color='fff' />}
 			</button>
 			<Menu isShow={isShow} />
 		</div>

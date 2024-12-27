@@ -1,28 +1,29 @@
 import { GoArrowLeft } from 'react-icons/go'
 import { TbCat } from 'react-icons/tb'
-// import useAuth from '../../../hooks/useAuth'
 import { useLocation, useNavigate } from 'react-router-dom'
+import useAuth from '../../../hooks/useAuth'
 import Hamburger from '../hamburger/Hamburger'
 import styles from './Header.module.scss'
 
 function Header({ backLink = '/' }) {
 	const { pathname } = useLocation()
 	const navigate = useNavigate()
+	const isAuth = useAuth()
 
 	return (
 		<header className={styles.header}>
 			{pathname === '/' ? (
 				<button onClick={() => {
-					navigate('/profile')
+					{ isAuth ? navigate('/auth') : navigate('/profile') }
 				}}
 				>
-					<TbCat color='fff' fontSize={29} />
+					<TbCat color='fff' fontSize={50} />
 				</button>) :
 				<button onClick={() => {
 					navigate(backLink)
 				}}
 				>
-					<GoArrowLeft color='fff' fontSize={29} />
+					<GoArrowLeft color='fff' fontSize={50} />
 				</button>
 			}
 			<Hamburger />

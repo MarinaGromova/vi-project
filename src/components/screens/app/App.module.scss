@@ -1,3 +1,12 @@
-// .layout {
-//   box-shadow: 15px 15px 0 0 #ED6742;
-// }
+@import '../../../assets/styles/variables';
+
+.heading {
+	margin: 38px auto;
+	text-align: center;
+	font-size: 32px;
+	color: $white;
+	line-height: 1.5;
+	@media (max-width: $mobile) {
+		font-size: 26px;
+	}
+}

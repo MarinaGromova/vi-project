@@ -2,7 +2,11 @@ import styles from './Button.module.scss'
 
 function Button({ children, clickHandler, size = "xl" }) {
 	return (
-		<div className={styles.wrapper}>Button</div>
+		<div className={styles.wrapper}>
+			<button className={styles.button + ' ' + styles[size]} onClick={clickHandler}>
+				{children}
+			</button>
+		</div>
 	)
 }
 

@@ -1,9 +1,9 @@
-@import '../../../../assets/styles//variables'
+@import '../../../assets/styles/variables';
 
 $accent-04: rgba($accent, 0.4);
 
 .button {
-	border: none;
+	border: 1px solid #fff;
 	outline: none;
 	font-size: 20px;
 	border-radius: 10px;
@@ -12,6 +12,7 @@ $accent-04: rgba($accent, 0.4);
 	background-color: $accent-04;
 	cursor: pointer;
 	color: #fff;
+	box-shadow: $bx-16;
 
 	@media (max-width: $mobile) {
 		font-size: 16px;
