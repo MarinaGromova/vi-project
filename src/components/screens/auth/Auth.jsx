@@ -1,31 +1,36 @@
+import { useMutation } from '@tanstack/react-query'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import AuthService from '../../../services/auth.service'
 import Layout from '../../layout/Layout'
 import styles from '../../screens/auth/Auth.module.scss'
 import Button from '../../ui/button/Button'
 import Field from '../../ui/field/field'
 import Loader from '../../ui/loader/Loader'
 
-const isLoading = false
-const isLoadingAuth = false
-
 function Auth() {
-	const [type, setType] = useState('auth')
+	const [type, setType] = useState('login')
 	/*
     TODO:
 
 		[] - Auth context
 		[] - Axios
 		[] - React Query
+		[] -Notification
 
 	*/
 	const { register, handleSubmit, formState: { errors } } = useForm({
 		mode: 'onChange'
 	})
 
-	function onSubmit(data) {
-		//type
-		console.log(data)
+	const {mutate, isLoading} = useMutation(['auth'], (email, password) => AuthService.main(type), {
+		onSuccess: data => {
+			alert('success')
+		}
+	})
+
+	const onSubmit = (data) => {
+		mutate(data.email, data.password)
 	}
 
 	return (
