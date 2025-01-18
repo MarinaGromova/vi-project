@@ -1,9 +1,11 @@
+import Cookies from 'js-cookie'
+
 import { $axios } from '../components/api'
 
 class AuthService {
 	async main(email, password, type) {
 	try {
-		const {data} = await $axios.post(`/users/${type}`, {
+		const {data} = await $axios.post(`/auth/${type}`, {
 			email,
 			password
 		})

@@ -19,18 +19,18 @@ function Auth() {
 		[] -Notification
 
 	*/
-	const { register, handleSubmit, formState: { errors } } = useForm({
+	const { register, handleSubmit, formState: { errors }, reset } = useForm({
 		mode: 'onChange'
 	})
 
-	const {mutate, isLoading} = useMutation(['auth'], (email, password) => AuthService.main(type), {
+	const {mutate, isLoading} = useMutation(['auth'], ({email, password}) => AuthService.main(type), {
 		onSuccess: data => {
 			alert('success')
 		}
 	})
 
 	const onSubmit = (data) => {
-		mutate(data.email, data.password)
+		mutate(data)
 	}
 
 	return (
@@ -56,10 +56,10 @@ function Auth() {
 						placeholder='Enter Password'
 					/>
 					<div className={styles.wrapperButtons}>
-						<Button clickHandler={() => setType('auth')}>
+						<Button clickHandler={() => setType('login')}>
 							Sign in
 						</Button>
-						<Button clickHandler={() => setType('reg')}>
+						<Button clickHandler={() => setType('register')}>
 							Sign up
 						</Button>
 					</div>

@@ -3,6 +3,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './assets/styles/index.scss'
 import Router from './routes/Routes'
+
 const queryClient = new QueryClient({
 	defaultOptions: {
 		queries: {
