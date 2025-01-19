@@ -12,7 +12,7 @@ export const routes = [
 	{
 		path: '/auth',
 		component: Auth,
-		isAuth: false
+		isAuth: true
 	},
 	{
 		path: '/new-workout',
