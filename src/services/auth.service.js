@@ -10,7 +10,7 @@ class AuthService {
 				password
 			})
 
-			if (data.token) Cookies.set('token', data.token)
+			if (data.token) Cookies.set('red', data.token)
 
 			return data
 		} catch (error) {

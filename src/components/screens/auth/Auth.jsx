@@ -31,7 +31,7 @@ function Auth() {
 		mode: 'onChange'
 	})
 
-	const { mutate, isLoading } = useMutation(
+const { mutate, isLoading } = useMutation(
 		['auth'],
 		({ email, password }) => AuthService.main(email, password, type),
 		{

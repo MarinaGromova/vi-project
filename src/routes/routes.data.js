@@ -1,18 +1,18 @@
-import App from '../components/screens/app/App'
+import Home from '../components/screens/Home/Home'
 import Auth from '../components/screens/auth/Auth'
 import NewWorkout from '../components/screens/new-workout/NewWorkout'
 import Profile from '../components/screens/profile/Profile'
 
 export const routes = [
-	{
+		{
 		path: '/',
-		component: App,
+		component: Home,
 		isAuth: false
 	},
 	{
 		path: '/auth',
 		component: Auth,
-		isAuth: true
+		isAuth: false
 	},
 	{
 		path: '/new-workout',
