@@ -15,12 +15,10 @@ function Auth() {
 	const [type, setType] = useState('login')
 	/*
     TODO:
-
 		[] - Auth context
 		[] - Axios
 		[] - React Query
 		[] -Notification
-
 	*/
 	const {
 		register,

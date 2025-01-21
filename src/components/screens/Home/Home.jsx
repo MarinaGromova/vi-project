@@ -7,6 +7,7 @@ import styles from '../Home/Home.module.scss'
 function Home() {
 	const isAuth = useAuth()
 	const navigate = useNavigate()
+	
 	return (
 		<Layout bgImage='/images/home-bg.jpg'>
 			<Button clickHandler={() => { !isAuth ? navigate('/auth') : navigate('/new-workout') }}>
