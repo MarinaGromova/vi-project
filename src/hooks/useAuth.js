@@ -1,7 +1,9 @@
+import { useContext } from 'react'
+
+import { AuthContext } from '../providers/AuthProvider'
+
 function useAuth(){
-	return {
-		isAuth: false
-	}
+	useContext(AuthContext)
 }
 
 export default useAuth
