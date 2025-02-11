@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import styles from '../hamburger/Hamburger.module.scss'
 import { menu } from './menu.data'
 
-function Menu({ isShow }) {
+function Menu({ isShow, setIsShow }) {
 	//функция выйти из системы
 	const logoutHandler = () => { }
 
