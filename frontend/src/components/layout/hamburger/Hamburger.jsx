@@ -31,7 +31,7 @@ function Hamburger() {
 			>
 				{isShow ? <IoClose fontSize={50} color='fff' /> : <FiAlignRight fontSize={50} color='fff' />}
 			</button>
-			<Menu isShow={isShow} />
+			<Menu isShow={isShow} setIsShow={setIsShow}/>
 		</div>
 	)
 }
