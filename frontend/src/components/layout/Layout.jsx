@@ -11,7 +11,7 @@ function Layout({ children, bgImage, heading = "", backLink = '/' }) {
 			[styles.otherPage]: !!heading
 		})}
 			style={{
-				backgroundImage: `url(${bgImage})`,
+				backgroundImage: `url(${bgImage})`
 			}}
 		>
 			<Header backLink={backLink} />

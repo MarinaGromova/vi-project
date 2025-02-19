@@ -1,0 +1,39 @@
+@import '../../../assets/styles/variables';
+
+// .before_after {
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: space-between;
+// 	@media (max-width: $mobile) {
+// 		width: 90%;
+// 		margin: 0 auto;
+// 	}
+
+// 	> div {
+// 		width: 50%;
+// 		@media (max-width: $mobile) {
+// 			width: 48%;
+// 		}
+// 	}
+
+// 	img {
+// 		border-radius: 10px;
+// 	}
+
+// 	.heading {
+// 		margin-bottom: 0.5rem;
+// 	}
+// }
+
+.title {
+	font-size: 18px;
+	line-height: 21.09px;
+	font-weight: 400;
+}
+
+.center {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0 0 98px;
+}

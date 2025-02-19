@@ -12,22 +12,26 @@ function Header({ backLink = '/' }) {
 
 	return (
 		<header className={styles.header}>
-			{pathname === '/' ? (
-				<button onClick={() => {
-					{ isAuth ? navigate('/auth') : navigate('/profile') }
-				}}
-				>
-					<TbCat color='fff' fontSize={50} />
-				</button>) :
-				<button onClick={() => {
-					navigate(backLink)
-				}}
-				>
-					<GoArrowLeft color='fff' fontSize={50} />
-				</button>
-			}
-			<Hamburger />
+			{isAuth &&
+			<>
+				{pathname === '/' ? (
+					<button onClick={() => {
+						{ isAuth ? navigate('/profile') : navigate('/auth') }
+					}}
+					>
+						<TbCat color='fff' fontSize={50} />
+					</button>) :
+					<button onClick={() => {
+						navigate(backLink)
+					}}
+					>
+						<GoArrowLeft color='fff' fontSize={50} />
+					</button>
+				}
+				<Hamburger />
+			</>}
 		</header>
+
 	)
 }
 

@@ -19,7 +19,7 @@ function Home() {
 	return (
 		isAuth &&
 		<Layout bgImage='/images/home-bg.jpg'>
-			<Button clickHandler={() => {  navigate('/new-workout') }}>
+			<Button clickHandler={() => { navigate('/new-workout') }}>
 				New
 			</Button>
 			<h1 className={styles.heading}>
