@@ -24,7 +24,7 @@ const { data, isLoading } = useProfile()
 						<Loader /> 
 						) : (
 						<>
-							<TbCat color='fff' fontSize={79} />
+							<TbCat color='fff' fontSize={59} />
 							<h1 className={stylesLayout.heading}>{data?.email}</h1>
 						</>
 						)}
