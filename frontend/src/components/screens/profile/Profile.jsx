@@ -29,7 +29,9 @@ const { data, isLoading } = useProfile()
 						</>
 						)}
 				</div>
+
 				<Statistics />
+				
 			</div>
 			<div
 				className='wrapper-inner-page'

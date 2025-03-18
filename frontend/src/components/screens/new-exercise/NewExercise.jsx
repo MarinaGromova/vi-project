@@ -39,7 +39,7 @@ function NewExercise() {
 	return (
 		<>
 			<Layout
-				bgImage='/images/new-exercise-bg.jpg'
+				bgImage='/images/exercise.jpg'
 				heading='Create new exercise'
 				backLink='/new-workout'
 			/>
