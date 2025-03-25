@@ -27,7 +27,7 @@ const SelectExercises = ({ control }) => {
 						}))}
 						value={value}
 						onChange={onChange}
-						isMulti
+						isMulti={true}
 					/>
 				)
 			}}

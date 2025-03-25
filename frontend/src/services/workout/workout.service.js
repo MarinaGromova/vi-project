@@ -1,13 +1,13 @@
 import { $axios } from '../../api'
 
-const WORKOUTS = '/workouts'
+export const WORKOUTS = '/workouts'
 
-class WorkoutsService {
+class WorkoutService {
 	async getAll() {
 		return $axios.get(WORKOUTS)
 	}
 
-	async getById() {
+	async getById(id) {
 		return $axios.get(`${WORKOUTS}/${id}`)
 	}
 
@@ -25,4 +25,4 @@ class WorkoutsService {
 	}
 }
 
-export default new WorkoutsService()
+export default new WorkoutService()

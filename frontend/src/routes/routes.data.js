@@ -1,8 +1,10 @@
+import ListWorkouts from '../../../../../OneDrive/Desktop/workout-app-2-client-Lesson_14/src/components/screens/workout/ListWorkouts'
 import Home from '../components/screens/Home/Home'
 import Auth from '../components/screens/auth/Auth'
 import NewExercise from '../components/screens/new-exercise/NewExercise'
 import NewWorkout from '../components/screens/new-workout/NewWorkout'
 import Profile from '../components/screens/profile/Profile'
+import Workout from '../components/screens/workout/Workout'
 
 export const routes = [
 		{
@@ -28,6 +30,16 @@ export const routes = [
 	{
 		path: '/profile',
 		component: Profile,
+		isAuth: true
+	},
+	{
+		path: '/workout/:id',
+		component: Workout,
+		auth: true
+	},
+	{
+		path: '/workouts',
+		component: ListWorkouts,
 		isAuth: true
 	}
 ]
