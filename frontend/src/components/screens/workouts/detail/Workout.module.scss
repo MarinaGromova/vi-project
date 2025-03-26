@@ -1,4 +1,4 @@
-@import '../../../assets/styles//variables';
+@import '../../../../assets/styles/variables';
 
 .time {
 	color: #deb6b6;
@@ -32,9 +32,9 @@
 			}
 		}
 
-		&.completed {
-			background-color: $hard-dark-accent;
-		}
+		// &.completed {
+		// 	background-color: $hard-dark-accent;
+		// }
 	}
 
 	.line {

@@ -2,7 +2,7 @@ import { $axios } from '../../api'
 
 import { WORKOUTS } from './workout.service'
 
-const LOG = `${WORKOUTS}/log`
+const LOG = `${WORKOUTS}`
 
 class WorkoutLogService {
 	async getById(id) {

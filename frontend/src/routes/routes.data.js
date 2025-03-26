@@ -1,10 +1,11 @@
-import ListWorkouts from '../../../../../OneDrive/Desktop/workout-app-2-client-Lesson_14/src/components/screens/workout/ListWorkouts'
-import Home from '../components/screens/Home/Home'
 import Auth from '../components/screens/auth/Auth'
+import ExerciseLog from '../components/screens/exercise-log/ExerciseLog'
+import Home from '../components/screens/Home/Home'
 import NewExercise from '../components/screens/new-exercise/NewExercise'
 import NewWorkout from '../components/screens/new-workout/NewWorkout'
 import Profile from '../components/screens/profile/Profile'
-import Workout from '../components/screens/workout/Workout'
+import Workout from '../components/screens/workouts/detail/Workout'
+import ListWorkouts from '../components/screens/workouts/list/ListWorkouts'
 
 export const routes = [
 		{
@@ -40,6 +41,11 @@ export const routes = [
 	{
 		path: '/workouts',
 		component: ListWorkouts,
+		isAuth: true
+	},
+	{
+		path: '/exercise/:id',
+		component: ExerciseLog,
 		isAuth: true
 	}
 ]
