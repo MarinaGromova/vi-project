@@ -23,8 +23,6 @@ const Workout = () => {
 
 	const navigation = useNavigate()
 
-	console.log(workoutLog)
-
 	return (
 		<>
 			<div
@@ -53,14 +51,16 @@ const Workout = () => {
 				{isLoading ? (
 					<Loader />
 					) : (
-					<div className={styles.wrapper}>
-						<div className={styles.item}>
-							<button className={styles.item} onClick={() => navigation(`/exercise/${id}`)}>
-								<span>{workoutLog.exercises[0].name}</span>
-								<img src={import.meta.env.VITE_SERVER_URL + workoutLog.exercises[0].iconPath} alt='exercises' height='34' />
-							</button>
+						<div className={styles.wrapper}>
+							{workoutLog.exercises.map(workout => 
+								<div className={styles.item} key={workout.id}>
+									<button onClick={() => navigation(`/exercise/${id}`)}>
+										<span>{workout.name}</span>
+										<img src={import.meta.env.VITE_SERVER_URL + workout.iconPath} alt='exercises' height='34' />
+									</button>
+								</div>
+							)}
 						</div>
-					</div>
 				  )
 				}
 			</div>
