@@ -21,6 +21,8 @@ const Workout = () => {
 		select: ({ data }) => data
 	})
 
+	// console.log(workoutLog)
+
 	const navigation = useNavigate()
 
 	return (
@@ -36,8 +38,8 @@ const Workout = () => {
 
 				{isSuccess && (
 					<div>
-						<time className={styles.time}>{workoutLog.minutes + ' min.'}</time>
-						<h1 className={stylesLayout.heading}>{workoutLog.name}</h1>
+						<time className={styles.time}>{workoutLog.minute + ' min.'}</time>
+						<h1 className={stylesLayout.heading}>{workoutLog.workout.name}</h1>
 					</div>
 				)}
 			</div>
@@ -52,11 +54,11 @@ const Workout = () => {
 					<Loader />
 					) : (
 						<div className={styles.wrapper}>
-							{workoutLog.exercises.map(workout => 
-								<div className={styles.item} key={workout.id}>
+							{workoutLog.exerciseLogs.map(exercise => 
+								<div className={styles.item} key={exercise.id}>
 									<button onClick={() => navigation(`/exercise/${id}`)}>
-										<span>{workout.name}</span>
-										<img src={import.meta.env.VITE_SERVER_URL + workout.iconPath} alt='exercises' height='34' />
+										<span>{exercise.exercise.name}</span>
+										<img src={import.meta.env.VITE_SERVER_URL + exercise.exercise.iconPath} alt='exercises' height='34' />
 									</button>
 								</div>
 							)}

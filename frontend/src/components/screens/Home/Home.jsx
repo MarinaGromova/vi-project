@@ -23,7 +23,7 @@ function Home() {
 				New
 			</Button>
 			<h1 className={styles.heading}>
-				EXERCISES FOR THE SHOULDERS
+					CREATE YOUR OWN WORKOUT
 			</h1>
 			<Statistics />
 		</Layout>

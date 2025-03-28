@@ -16,13 +16,15 @@ export const useWorkouts = () => {
 		isSuccess: isSuccessMutate,
 		error
 	} = useMutation(['Create new workout log'],
-		workoutId => WorkoutLogService.getById(workoutId),
+		workoutId => WorkoutLogService.create(workoutId),
 		{
 			onSuccess: ({ data }) => {
 				navigate(`/workout/${data.id}`)
 			}
 		}
 	)
+
+	// console.log(data)
 
 	return {
 		data,

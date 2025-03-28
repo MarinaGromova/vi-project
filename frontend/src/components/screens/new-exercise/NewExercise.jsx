@@ -46,7 +46,7 @@ function NewExercise() {
 							validate: value => value > 0 || 'Times must be number',
 							required: 'Times is required'
 						}}
-						placeholder='Enter times'
+						placeholder='Enter repeat'
 					/>
 
 					<Controller
