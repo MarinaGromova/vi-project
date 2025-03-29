@@ -21,7 +21,7 @@ const Workout = () => {
 		select: ({ data }) => data
 	})
 
-	// console.log(workoutLog)
+	console.log(workoutLog)
 
 	const navigation = useNavigate()
 
@@ -56,7 +56,7 @@ const Workout = () => {
 						<div className={styles.wrapper}>
 							{workoutLog.exerciseLogs.map(exercise => 
 								<div className={styles.item} key={exercise.id}>
-									<button onClick={() => navigation(`/exercise/${id}`)}>
+									<button onClick={() => navigation(`/exercise/${exercise.id}`)}>
 										<span>{exercise.exercise.name}</span>
 										<img src={import.meta.env.VITE_SERVER_URL + exercise.exercise.iconPath} alt='exercises' height='34' />
 									</button>

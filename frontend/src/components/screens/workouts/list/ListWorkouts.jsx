@@ -11,7 +11,6 @@ const ListWorkouts = () => {
 	return (
 		<>
 			<Layout bgImage='/images/home-bg.jpg' heading='Workout list' />
-
 			<div className='wrapper-inner-page'>
 				{/* {error && <Alert type='error' text={error} />} */}
 				{isSuccessMutate && <Alert text='Workout log created' />}
