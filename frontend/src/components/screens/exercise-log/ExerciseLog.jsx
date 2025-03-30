@@ -1,15 +1,19 @@
 import { useQuery } from '@tanstack/react-query'
 import cn from 'clsx'
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { BsArrowRepeat } from "react-icons/bs"
+import { GoArrowLeft } from 'react-icons/go'
+import { IoCheckmarkDoneCircleOutline } from "react-icons/io5"
+import { useNavigate, useParams } from 'react-router-dom'
 import ExerciseLogService from '../../../services/exercise/exercise-log.service'
+import Header from '../../layout/header/Header'
 import stylesLayout from '../../layout/Layout.module.scss'
 import styles from '../../screens/exercise-log/ExerciseLog.module.scss'
 import Loader from '../../ui/loader/Loader'
 
 const ExerciseLog = () => {
 		const { id } = useParams()
-		// const navigate = useNavigate()
+		const navigation = useNavigate()
 
 	const {
 		data: exerciseLog,
@@ -24,13 +28,12 @@ const ExerciseLog = () => {
 
 	useEffect(() => {
 		if(seconds>0 && timeActive) {
-			setTimeout(setSeconds, 1000, seconds-1)
+			setTimeout(setSeconds, 100, seconds-1)
 		}
 		else {
 			setTimeActive(false)
 		}
 	},[ seconds, timeActive ])
-
 
 	return (
 		<>
@@ -40,13 +43,18 @@ const ExerciseLog = () => {
 					height: 356,
 				}}
 			>			
+				<Header backLink="/workouts" />
 			</div>
+			
 			<div className='wrapper-inner-page'>
 			{isLoading ? <Loader /> : (
 				<div className={styles.wrapper}>
 					<div className={styles.item}>
 						<div>
 							<div className={styles.items}>
+							  <button className={styles.repeat} onClick={() => navigation(`/workout/${exerciseLog.workoutLogId}`) } >
+									<GoArrowLeft color='fff' fontSize={30}/>
+								</button>
 								<img src={import.meta.env.VITE_SERVER_URL + exerciseLog.exercise.iconPath} alt ={exerciseLog.exercise.name} height='44' />
 								<span>{exerciseLog.exercise.name}</span>
 							</div>
@@ -58,11 +66,18 @@ const ExerciseLog = () => {
 									<>
 										<button className={styles.repeat} onClick={()=> setTimeActive(!timeActive)}>{timeActive ? 'stop' : 'start'}
 										</button>
-										<div>{seconds}</div>
+										<div>{seconds * exerciseLog.exercise.times * 4}</div>
 									</>
-										) : (<button className={styles.repeat} onClick={()=> setSeconds(60)}>
-										</button>
-								)
+										) : (
+											<div className={styles.icons}>
+												<button className={styles.repeat} onClick={() => navigation(`/workout/${exerciseLog.workoutLogId}`) } >
+													<IoCheckmarkDoneCircleOutline color='fff' fontSize={50} />
+												</button>
+												<button className={styles.repeat} onClick={()=> setSeconds(60)}>
+													<BsArrowRepeat color='fff' fontSize={50} />
+												</button>
+											</div>
+								)  
 							}
 						</div>
 				</div>
