@@ -22,7 +22,7 @@
 
 Клонировать репозиторий:
 
-    git clone https://github.com/ia-stepanov/wwwtemplate.git
+    git clone git@github.com:MarinaGromova/vi-project.git
 
 Установить зависимости:
 
