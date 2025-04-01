@@ -21,8 +21,6 @@ const Workout = () => {
 		select: ({ data }) => data
 	})
 
-	console.log(workoutLog)
-
 	const navigation = useNavigate()
 
 	return (
@@ -48,7 +46,6 @@ const Workout = () => {
 				style={{ paddingLeft: 0, paddingRight: 0 }}
 			>
 				<div style={{ width: '90%', margin: '0 auto' }}>
-					{/* {errorCompleted && <Alert type='error' text={errorCompleted} />} */}
 				</div>
 				{isLoading ? (
 					<Loader />

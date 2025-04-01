@@ -9,6 +9,7 @@ import Statistics from './Statistics/Statistics'
 
 function Profile() {
 	const { data, isLoading } = useProfile()
+
 		return (
 			<>
 				<div className={cn(stylesLayout.wrapper, stylesLayout.otherPage)}

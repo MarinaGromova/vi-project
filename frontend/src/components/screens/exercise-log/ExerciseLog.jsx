@@ -1,4 +1,4 @@
-import { useQuery } from '@tanstack/react-query'
+import { useMutation, useQuery } from '@tanstack/react-query'
 import cn from 'clsx'
 import { useEffect, useState } from 'react'
 import { BsArrowRepeat } from "react-icons/bs"
@@ -17,11 +17,28 @@ const ExerciseLog = () => {
 
 	const {
 		data: exerciseLog,
-		isLoading
+		isLoading,
 	} = useQuery(['get exercise log', id], () => 
 		ExerciseLogService.getById(id), {
 		select: ({ data }) => data
 	})
+
+	const { mutate } = useMutation(
+		['complete log'],
+		body => ExerciseLogService.complete(id, body),
+		{
+			onSuccess: ({ data }) => {
+				data.isCompleted
+			}
+		}
+	)	
+
+	const [color, setColor] = useState(false)
+
+	const checkColor = (color) => {
+		mutate({id, isCompleted: color})
+		setColor(!color)
+	}
 
 	const [timeActive, setTimeActive] = useState(false)
 	const [seconds, setSeconds] = useState(60)
@@ -69,14 +86,27 @@ const ExerciseLog = () => {
 										<div>{seconds * exerciseLog.exercise.times * 4}</div>
 									</>
 										) : (
-											<div className={styles.icons}>
-												<button className={styles.repeat} onClick={() => navigation(`/workout/${exerciseLog.workoutLogId}`) } >
-													<IoCheckmarkDoneCircleOutline color='fff' fontSize={50} />
-												</button>
+											<div className={styles.icons}>											
+												{
+													exerciseLog.isCompleted === false ? 
+													<button className={styles.repeat} onClick={() => checkColor(color)}>
+
+													{  !color ?
+														<IoCheckmarkDoneCircleOutline color='fff' fontSize={50} />	: <IoCheckmarkDoneCircleOutline color='black' fontSize={50}  />	}
+
+													</button>
+													 :
+													<button className={styles.repeat} onClick={() => checkColor(color)}>
+														{  !color ? <IoCheckmarkDoneCircleOutline color='black' fontSize={50} />
+															: <IoCheckmarkDoneCircleOutline color='fff' fontSize={50} />}													
+													</button>
+												}
+
 												<button className={styles.repeat} onClick={()=> setSeconds(60)}>
 													<BsArrowRepeat color='fff' fontSize={50} />
 												</button>
 											</div>
+
 								)  
 							}
 						</div>
