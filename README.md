@@ -10,6 +10,7 @@
 ![JavaScript](https://img.shields.io/badge/-JavaScript-191919?style=for-the-badge&logo=JavaScript)
 ![HTML5](https://img.shields.io/badge/-HTML5-191919?style=for-the-badge&logo=HTML5&logoColor=red)
 ![API](https://img.shields.io/badge/-API-191919?style=for-the-badge)
+
 ![ViteJS](https://img.shields.io/badge/-ViteJS-%2F%3AbadgeContent)
 ![SCSS](https://img.shields.io/badge/-SCSS-cd6799)
 ![React Router](https://img.shields.io/badge/-React%20Router-c03)
