@@ -18,7 +18,7 @@
 ![TanStack Query](https://img.shields.io/badge/TanStack%20Query-f36)
 ![Axios](https://img.shields.io/badge/Axios-%23909)
 
-## Макет в Figma:
+### Макет в Figma:
 
 - [Макет VI-PROJECT] (https://https://www.figma.com/design/gAm3xlNqamxeIGO3vpeF0k/Workout-app-%2F-React-course?node-id=0-1)
 
