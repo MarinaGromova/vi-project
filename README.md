@@ -6,14 +6,16 @@
 
 ## Стек технологий:
 
--React;
--ViteJS;
--SCSS;
--React Router;
--React Hook Form;
--TanStack Query;
--Axios;
--Prettier.
+![React](https://img.shields.io/badge/-React-191919?style=for-the-badge&logo=React)
+![JavaScript](https://img.shields.io/badge/-JavaScript-191919?style=for-the-badge&logo=JavaScript)
+![HTML5](https://img.shields.io/badge/-HTML5-191919?style=for-the-badge&logo=HTML5&logoColor=red)
+![API](https://img.shields.io/badge/-API-191919?style=for-the-badge)
+![ViteJS](https://img.shields.io/badge/-ViteJS-%2F%3AbadgeContent)
+![SCSS](https://img.shields.io/badge/-SCSS-cd6799)
+![React Router](https://img.shields.io/badge/-React%20Router-c03)
+![React Hook Form](https://img.shields.io/badge/React%20Hook%20Form-%23f69)
+![TanStack Query](https://img.shields.io/badge/TanStack%20Query-f36)
+![Axios](https://img.shields.io/badge/Axios-%23909)
 
 ## Макет в Figma:
 
