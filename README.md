@@ -12,7 +12,8 @@
 -React Router;
 -React Hook Form;
 -TanStack Query;
--Axios.
+-Axios;
+-Prettier.
 
 ## Макет в Figma:
 

@@ -1,47 +1,30 @@
-import { useMutation, useQuery } from '@tanstack/react-query'
+// import { useMutation, useQuery } from '@tanstack/react-query'
 import cn from 'clsx'
 import { useEffect, useState } from 'react'
 import { BsArrowRepeat } from "react-icons/bs"
 import { GoArrowLeft } from 'react-icons/go'
 import { IoCheckmarkDoneCircleOutline } from "react-icons/io5"
-import { useNavigate, useParams } from 'react-router-dom'
-import ExerciseLogService from '../../../services/exercise/exercise-log.service'
+import { useNavigate } from 'react-router-dom'
+// import ExerciseLogService from '../../../services/exercise/exercise-log.service'
 import Header from '../../layout/header/Header'
 import stylesLayout from '../../layout/Layout.module.scss'
 import styles from '../../screens/exercise-log/ExerciseLog.module.scss'
 import Loader from '../../ui/loader/Loader'
+import { useExerciseLog } from './useExerciseLog'
 
 const ExerciseLog = () => {
-		const { id } = useParams()
-		const navigation = useNavigate()
+	const navigation = useNavigate()
 
-	const {
-		data: exerciseLog,
-		isLoading,
-	} = useQuery(['get exercise log', id], () => 
-		ExerciseLogService.getById(id), {
-		select: ({ data }) => data
-	})
-
-	const { mutate } = useMutation(
-		['complete log'],
-		body => ExerciseLogService.complete(id, body),
-		{
-			onSuccess: ({ data }) => {
-				data.isCompleted
-			}
-		}
-	)	
-
+	const {mutate, isLoading, exerciseLog, id} = useExerciseLog()
+	
 	const [color, setColor] = useState(false)
+	const [timeActive, setTimeActive] = useState(false)
+	const [seconds, setSeconds] = useState(60)
 
 	const checkColor = (color) => {
 		mutate({id, isCompleted: color})
 		setColor(!color)
 	}
-
-	const [timeActive, setTimeActive] = useState(false)
-	const [seconds, setSeconds] = useState(60)
 
 	useEffect(() => {
 		if(seconds>0 && timeActive) {

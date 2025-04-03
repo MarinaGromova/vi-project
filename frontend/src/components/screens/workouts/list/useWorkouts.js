@@ -24,8 +24,6 @@ export const useWorkouts = () => {
 		}
 	)
 
-	// console.log(data)
-
 	return {
 		data,
 		isSuccess,
