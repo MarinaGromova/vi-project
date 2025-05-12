@@ -11,7 +11,7 @@ const { data, isLoading } = useProfile()
 			<div className={styles.wrapper}>
 				{data?.statistics?.map(statistic =>
 					<div key={statistic.label} className={styles.count}>
-						<h3 className={styles.heading}>{statistic.label}</h3>
+						<h2 className={styles.heading}>{statistic.label}</h2>
 						<p className={styles.number}>{statistic.value}</p>
 					</div>
 				)}

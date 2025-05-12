@@ -18,13 +18,15 @@ function Home() {
 	
 	return (
 		isAuth &&
-		<Layout bgImage='/images/home-bg.jpg'>
+		<Layout bgImage='/images/home-bg.avif'>
 			<Button clickHandler={() => { navigate('/new-workout') }}>
 				New
 			</Button>
-			<h1 className={styles.heading}>
+
+				<h1 className={styles.heading}>
 					CREATE YOUR OWN WORKOUT
-			</h1>
+				</h1>
+
 			<Statistics />
 		</Layout>
 	)

@@ -18,6 +18,7 @@ function Header({ backLink = '/' }) {
 					<button onClick={() => {
 						{ isAuth ? navigate('/profile') : navigate('/auth') }
 					}}
+					aria-label='профиль'
 					>
 						<TbCat color='fff' fontSize={50} />
 					</button>) :

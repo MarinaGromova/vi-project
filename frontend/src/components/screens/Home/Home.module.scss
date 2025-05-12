@@ -2,13 +2,13 @@
 @import '../../../vendor/fonts/fonts.scss';
 
 .heading {
-	width: 450px;
 	margin: 38px auto;
 	text-align: center;
 	font-size: 32px;
 	color: $white;
 	line-height: 1.5;
+	overflow-wrap: anywhere;
 	@media (max-width: $mobile) {
-		font-size: 26px;
+		font-size: 24px;
 	}
 }

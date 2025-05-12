@@ -28,6 +28,7 @@ function Hamburger() {
 				onClick={() => {
 					setIsShow(!isShow)
 				}}
+				aria-label='гамбургер'
 			>
 				{isShow ? <IoClose fontSize={50} color='fff' /> : <FiAlignRight fontSize={50} color='fff' />}
 			</button>
