@@ -12,7 +12,16 @@ import { useExercise } from './useExercise'
 const data = ['chest', 'shoulders', 'biceps', 'legs', 'hit', 'back']
 
 function NewExercise() {
-	const { error, isSuccess, isLoading, errors, handleSubmit, onSubmit, register, control } = useExercise()
+	const {
+		error,
+		isSuccess,
+		isLoading,
+		errors,
+		handleSubmit,
+		onSubmit,
+		register,
+		control
+	} = useExercise()
 
 	return (
 		<>

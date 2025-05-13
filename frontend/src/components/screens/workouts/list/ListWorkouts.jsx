@@ -5,8 +5,8 @@ import styles from '../detail/Workout.module.scss'
 import { useWorkouts } from './useWorkouts'
 
 const ListWorkouts = () => {
-
-	const { data, error, isLoading, isSuccess, isSuccessMutate, mutate } = 	useWorkouts()
+	const { data, error, isLoading, isSuccess, isSuccessMutate, mutate } =
+		useWorkouts()
 
 	return (
 		<>
@@ -17,19 +17,19 @@ const ListWorkouts = () => {
 				{isLoading && <Loader />}
 				{isSuccess && (
 					<div className={styles.wrapper}>
-						{data.map(item => 
+						{data.map(item => (
 							<div className={styles.item} key={item.id}>
-								<button onClick={() => {
-									mutate(item.id)
-									}
-								}>
+								<button
+									onClick={() => {
+										mutate(item.id)
+									}}
+								>
 									<span>{item.name}</span>
 								</button>
 							</div>
-							)}
+						))}
 					</div>
-				)
-				}
+				)}
 			</div>
 		</>
 	)

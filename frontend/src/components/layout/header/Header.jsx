@@ -12,27 +12,31 @@ function Header({ backLink = '/' }) {
 
 	return (
 		<header className={styles.header}>
-			{isAuth &&
-			<>
-				{pathname === '/' ? (
-					<button onClick={() => {
-						{ isAuth ? navigate('/profile') : navigate('/auth') }
-					}}
-					aria-label='профиль'
-					>
-						<TbCat color='fff' fontSize={50} />
-					</button>) :
-					<button onClick={() => {
-						navigate(backLink)
-					}}
-					>
-						<GoArrowLeft color='fff' fontSize={50} />
-					</button>
-				}
-				<Hamburger />
-			</>}
+			{isAuth && (
+				<>
+					{pathname === '/' && isAuth ? (
+						<button
+							onClick={() => {
+								navigate('/profile')
+							}}
+							aria-label='профиль'
+						>
+							<TbCat color='fff' fontSize={50} />
+						</button>
+					) : (
+						<button
+							aria-label='Go back'
+							onClick={() => {
+								navigate(isAuth ? backLink : '/auth')
+							}}
+						>
+							<GoArrowLeft color='fff' fontSize={50} />
+						</button>
+					)}
+					<Hamburger />
+				</>
+			)}
 		</header>
-
 	)
 }
 

@@ -22,18 +22,17 @@
 		}
 
 		.heading {
-			color: $dark-accent;
+			color: $white;
 			text-transform: capitalize;
 			font-size: 24px;
-			color:#f1e8e8;
 			@media (max-width: $mobile) {
-				font-size: 18px;	
+				font-size: 18px;
 			}
 		}
 
 		.number {
 			font-weight: bold;
-			color: #fff;
+			color: $black;
 
 			@media (max-width: $mobile) {
 				font-size: 26px;

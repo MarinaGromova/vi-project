@@ -1,5 +1,5 @@
 import { $axios } from '../api'
-const USERS ='/users'
+const USERS = '/users'
 
 class UserService {
 	async getProfile() {

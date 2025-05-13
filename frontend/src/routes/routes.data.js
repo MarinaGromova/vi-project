@@ -8,7 +8,7 @@ import Workout from '../components/screens/workouts/detail/Workout'
 import ListWorkouts from '../components/screens/workouts/list/ListWorkouts'
 
 export const routes = [
-		{
+	{
 		path: '/',
 		component: Home,
 		isAuth: false
@@ -23,7 +23,7 @@ export const routes = [
 		component: NewWorkout,
 		isAuth: true
 	},
-		{
+	{
 		path: '/new-exercise',
 		component: NewExercise,
 		isAuth: true

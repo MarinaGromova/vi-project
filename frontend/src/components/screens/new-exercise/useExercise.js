@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form'
 import ExerciseService from '../../../services/exercise/exercise.service'
 
 export const useExercise = () => {
-		const {
+	const {
 		register,
 		handleSubmit,
 		formState: { errors },
@@ -14,7 +14,8 @@ export const useExercise = () => {
 		mode: 'onChange'
 	})
 
-	const { isSuccess, error, isLoading, mutate } = useMutation(['create exercise'],
+	const { isSuccess, error, isLoading, mutate } = useMutation(
+		['create exercise'],
 		body => ExerciseService.create(body),
 		{
 			onSuccess: () => {
@@ -26,10 +27,10 @@ export const useExercise = () => {
 	const onSubmit = data => {
 		mutate(data)
 	}
-	
+
 	return useMemo(
 		() => ({
-      control,
+			control,
 			register,
 			handleSubmit,
 			errors,

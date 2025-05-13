@@ -14,16 +14,15 @@ export const useNewWorkout = () => {
 		mode: 'onChange'
 	})
 
-	const { isSuccess, error, isLoading, mutate } = useMutation(['create workout'],
+	const { isSuccess, error, isLoading, mutate } = useMutation(
+		['create workout'],
 		body => WorkoutService.create(body),
 		{
 			onSuccess: () => {
-				reset(
-					{
-						name: '',
-						exerciseIds: []
-					}
-				)
+				reset({
+					name: '',
+					exerciseIds: []
+				})
 			}
 		}
 	)
@@ -34,7 +33,7 @@ export const useNewWorkout = () => {
 			exerciseIds: data.exerciseIds.map(ex => ex.value)
 		})
 	}
-	
+
 	return useMemo(
 		() => ({
 			control,

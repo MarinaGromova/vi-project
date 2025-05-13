@@ -4,7 +4,7 @@ import { TOKEN } from '../app.constants.js'
 
 export const AuthContext = createContext()
 
-function AuthProvider({ children }){
+function AuthProvider({ children }) {
 	//состояние авторизации пользователя
 	const [isAuth, setIsAuth] = useState(!!Cookies.get(TOKEN))
 

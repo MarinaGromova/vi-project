@@ -7,8 +7,11 @@ import styles from './Hamburger.module.scss'
 function Hamburger() {
 	const ref = useRef(null)
 	const [isShow, setIsShow] = useState(false)
-	const closeMenuOutside = (e) => {
-		if (ref.current && !ref.current.contains(e.target) || e.key === "Escape") {
+	const closeMenuOutside = e => {
+		if (
+			(ref.current && !ref.current.contains(e.target)) ||
+			e.key === 'Escape'
+		) {
 			setIsShow(false)
 		}
 	}
@@ -30,9 +33,13 @@ function Hamburger() {
 				}}
 				aria-label='гамбургер'
 			>
-				{isShow ? <IoClose fontSize={50} color='fff' /> : <FiAlignRight fontSize={50} color='fff' />}
+				{isShow ? (
+					<IoClose fontSize={50} color='fff' />
+				) : (
+					<FiAlignRight fontSize={50} color='fff' />
+				)}
 			</button>
-			<Menu isShow={isShow} setIsShow={setIsShow}/>
+			<Menu isShow={isShow} setIsShow={setIsShow} />
 		</div>
 	)
 }

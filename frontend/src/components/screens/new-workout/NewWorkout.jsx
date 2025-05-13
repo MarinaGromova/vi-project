@@ -8,7 +8,7 @@ import SelectExercises from './SelectExercises'
 import { useNewWorkout } from './useNewWorkout'
 
 function NewWorkout() {
-	const { 
+	const {
 		error,
 		isSuccess,
 		isLoading,
@@ -16,7 +16,7 @@ function NewWorkout() {
 		handleSubmit,
 		onSubmit,
 		register,
-		control 
+		control
 	} = useNewWorkout()
 
 	return (

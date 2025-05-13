@@ -16,8 +16,7 @@ const Workout = () => {
 		data: workoutLog,
 		isSuccess,
 		isLoading
-	} = useQuery(['get workout log', id], () => 
-		WorkoutLogService.getById(id), {
+	} = useQuery(['get workout log', id], () => WorkoutLogService.getById(id), {
 		select: ({ data }) => data
 	})
 
@@ -31,7 +30,7 @@ const Workout = () => {
 					backgroundImage: `url('/images/home-bg.jpg')`,
 					height: 356
 				}}
-			> 
+			>
 				<Header backLink='/workouts' />
 
 				{isSuccess && (
@@ -45,23 +44,28 @@ const Workout = () => {
 				className='wrapper-inner-page'
 				style={{ paddingLeft: 0, paddingRight: 0 }}
 			>
-				<div style={{ width: '90%', margin: '0 auto' }}>
-				</div>
+				<div style={{ width: '90%', margin: '0 auto' }}></div>
 				{isLoading ? (
 					<Loader />
-					) : (
-						<div className={styles.wrapper}>
-							{workoutLog.exerciseLogs.map(exercise => 
-								<div className={styles.item} key={exercise.id}>
-									<button onClick={() => navigation(`/exercise/${exercise.id}`)}>
-										<span>{exercise.exercise.name}</span>
-										<img src={import.meta.env.VITE_SERVER_URL + exercise.exercise.iconPath} alt='exercises' height='34' />
-									</button>
-								</div>
-							)}
-						</div>
-				  )
-				}
+				) : (
+					<div className={styles.wrapper}>
+						{workoutLog.exerciseLogs.map(exercise => (
+							<div className={styles.item} key={exercise.id}>
+								<button onClick={() => navigation(`/exercise/${exercise.id}`)}>
+									<span>{exercise.exercise.name}</span>
+									<img
+										src={
+											import.meta.env.VITE_SERVER_URL +
+											exercise.exercise.iconPath
+										}
+										alt='exercises'
+										height='34'
+									/>
+								</button>
+							</div>
+						))}
+					</div>
+				)}
 			</div>
 		</>
 	)
