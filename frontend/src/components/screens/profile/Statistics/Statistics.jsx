@@ -1,25 +1,18 @@
-import Loader from '../../../ui/loader/Loader'
 import { useProfile } from '../useProfile'
 import styles from './Statistics.module.scss'
 
 function Statistics() {
-	const { data, isLoading } = useProfile()
+	const { data } = useProfile()
 
 	return (
-		<>
-			{isLoading ? (
-				<Loader />
-			) : (
-				<div className={styles.wrapper}>
-					{data?.statistics?.map(statistic => (
-						<div key={statistic.label} className={styles.count}>
-							<h2 className={styles.heading}>{statistic.label}</h2>
-							<p className={styles.number}>{statistic.value}</p>
-						</div>
-					))}
+		<div className={styles.wrapper}>
+			{data?.statistics?.map(statistic => (
+				<div key={statistic.label} className={styles.count}>
+					<h2 className={styles.heading}>{statistic.label}</h2>
+					<p className={styles.number}>{statistic.value}</p>
 				</div>
-			)}
-		</>
+			))}
+		</div>
 	)
 }
 

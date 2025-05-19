@@ -3,12 +3,13 @@ import { TbCat } from 'react-icons/tb'
 import Header from '../../layout/header/Header'
 import stylesLayout from '../../layout/Layout.module.scss'
 import Loader from '../../ui/loader/Loader'
-import Statistics from '../profile/Statistics/Statistics'
 import { useProfile } from '../profile/useProfile'
 import styles from './Profile.module.scss'
+import Statistics from './Statistics/Statistics'
 
 function Profile() {
 	const { data, isLoading } = useProfile()
+	console.log(data)
 
 	return (
 		<>
